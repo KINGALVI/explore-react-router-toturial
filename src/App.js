@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './components/home/Home';
 import About from './components/about/About';
 import Defalts from './components/defalt/Defalts';
+import Main from './layout/Main';
 
 // how make a router path website in react :
 
@@ -23,9 +24,13 @@ import Defalts from './components/defalt/Defalts';
 
 function App() {
   const router = createBrowserRouter([
-    { path: '/', element: <Defalts></Defalts> },
-    { path: '/home', element: <Home></Home> },
-    { path: '/about', element: <About></About> }
+    {
+      element: <Main></Main>, children: [
+        { path: '/', element: <Defalts></Defalts> },
+        { path: '/home', element: <Home></Home> },
+        { path: '/about', element: <About></About> }
+      ]
+    }
   ])
   return (
     <div className="App">
