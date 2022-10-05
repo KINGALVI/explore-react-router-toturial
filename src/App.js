@@ -24,6 +24,7 @@ import Main from './layout/Main';
 
 function App() {
   const router = createBrowserRouter([
+
     //inside the OutLet .
     {
       element: <Main></Main>, children: [
@@ -31,8 +32,10 @@ function App() {
         { path: '/home', element: <Home></Home> }
       ]
     },
+
     //outside the OutLet .
     { path: '/about', element: <About></About> }
+    
   ])
   return (
     <div className="App">
