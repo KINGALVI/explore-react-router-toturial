@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+// how make a router path website in react :
+
+/*
+1. install react router: npm i react-router-dom .
+2. create a router use createBrowserRouter .
+3. add RouterProveder and pass props .
+4. create some route .
+*/
 
 function App() {
+  const router = createBrowserRouter([
+    { path: '/', element: <div>Thish Is Defalt Page</div> },
+    { path: '/home', element: <div>Home Page</div> },
+    { path: '/about', element: <div>Thish Is About Page</div> }
+  ])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }
