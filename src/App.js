@@ -1,5 +1,8 @@
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home from './components/home/Home';
+import About from './components/about/About';
+import Defalts from './components/defalt/Defalts';
 
 // how make a router path website in react :
 
@@ -10,11 +13,19 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 4. create some route .
 */
 
+//Things you need to create a route
+
+/*
+1. create a Link: so that you can go to this route .
+2.Create component: to add you will show something once you go to that route
+3. Add route in App.js so that react router know the component if needs to display while you are visiting to that route .
+*/
+
 function App() {
   const router = createBrowserRouter([
-    { path: '/', element: <div>Thish Is Defalt Page</div> },
-    { path: '/home', element: <div>Home Page</div> },
-    { path: '/about', element: <div>Thish Is About Page</div> }
+    { path: '/', element: <Defalts></Defalts> },
+    { path: '/home', element: <Home></Home> },
+    { path: '/about', element: <About></About> }
   ])
   return (
     <div className="App">
