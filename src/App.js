@@ -24,13 +24,15 @@ import Main from './layout/Main';
 
 function App() {
   const router = createBrowserRouter([
+    //inside the OutLet .
     {
       element: <Main></Main>, children: [
         { path: '/', element: <Defalts></Defalts> },
-        { path: '/home', element: <Home></Home> },
-        { path: '/about', element: <About></About> }
+        { path: '/home', element: <Home></Home> }
       ]
-    }
+    },
+    //outside the OutLet .
+    { path: '/about', element: <About></About> }
   ])
   return (
     <div className="App">
