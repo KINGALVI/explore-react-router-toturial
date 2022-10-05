@@ -22,6 +22,12 @@ import Main from './layout/Main';
 3. Add route in App.js so that react router know the component if needs to display while you are visiting to that route .
 */
 
+// Things that show a component in other component file or web page without makeing thish component clone into thosh component file or webpage:
+
+/*
+we can do thish with nested routeing . nested routing in a react dom sistem that make a component useful in other component file or website without makeing that componer clone . we can do thish with <Outlet> react sistem and connect this <Outlet> component with add.js file . whatever we create somthing in those <Outlet> component we can show thish in every singel component file that we use to create thish website .
+*/
+
 function App() {
   const router = createBrowserRouter([
 
