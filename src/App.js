@@ -5,6 +5,7 @@ import About from './components/about/About';
 import Defalts from './components/defalt/Defalts';
 import Main from './layout/Main';
 import Error from './components/error/Error';
+import Friend from './components/friend/Friend';
 
 // how make a router path website in react :
 
@@ -36,7 +37,17 @@ function App() {
     {
       element: <Main></Main>, children: [
         { path: '/', element: <Defalts></Defalts> },
-        { path: '/home', element: <Home></Home> }
+        { path: '/home', element: <Home></Home> },
+
+        //how can we call a API in react router .
+        {
+          path: '/friend',
+          loader: async () => {
+            return fetch(`https://jsonplaceholder.typicode.com/users`)
+          },
+          element: <Friend></Friend>
+        }
+
       ]
     },
 
