@@ -66,7 +66,6 @@ function App() {
 
     // if user search for a page that not exist in thsih webside file than we can throw a <Error> masseage to the user by useing <Error> component
     { path: '*', element: <Error></Error> }
-
   ])
   return (
     <div className="App">
