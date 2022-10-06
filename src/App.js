@@ -6,6 +6,7 @@ import Defalts from './components/defalt/Defalts';
 import Main from './layout/Main';
 import Error from './components/error/Error';
 import Friend from './components/friend/Friend';
+import UserDetails from './components/userdetails/UserDetails';
 
 // how make a router path website in react :
 
@@ -46,6 +47,15 @@ function App() {
             return fetch(`https://jsonplaceholder.typicode.com/users`)
           },
           element: <Friend></Friend>
+        },
+
+        //how to call API dynamickly
+        {
+          path: '/friend/:FriendId',
+          loader: async ({ params }) => {
+            return fetch(`https://jsonplaceholder.typicode.com/users/${params.FriendId}`)
+          },
+          element: <UserDetails></UserDetails>
         }
 
       ]
