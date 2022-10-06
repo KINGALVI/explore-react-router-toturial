@@ -4,6 +4,7 @@ import Home from './components/home/Home';
 import About from './components/about/About';
 import Defalts from './components/defalt/Defalts';
 import Main from './layout/Main';
+import Error from './components/error/Error';
 
 // how make a router path website in react :
 
@@ -40,7 +41,10 @@ function App() {
     },
 
     //outside the Outlet .
-    { path: '/about', element: <About></About> }
+    { path: '/about', element: <About></About> },
+
+    // if user search for a page that not exist in thsih webside file than we can throw a <Error> masseage to the user by useing <Error> component
+    { path: '*', element: <Error></Error> }
 
   ])
   return (
